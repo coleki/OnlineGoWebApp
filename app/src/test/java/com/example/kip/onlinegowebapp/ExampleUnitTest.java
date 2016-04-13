@@ -1,4 +1,4 @@
-package com.example.kip.onlinegowebapp;
+package com.onlinegowebapp.kip.onlinegowebapp;
 
 import org.junit.Test;
 

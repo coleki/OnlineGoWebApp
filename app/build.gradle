@@ -5,16 +5,25 @@ android {
     buildToolsVersion "23.0.3"
 
     defaultConfig {
-        applicationId "com.example.kip.onlinegowebapp"
+        applicationId "com.onlinegowebapp.kip.onlinegowebapp"
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
     }
+    signingConfigs {
+        release {
+            storeFile file("KipReleaseKey.keystore")
+            storePassword System.getenv("KSTOREPWD")
+            keyAlias "KipReleaseKey"
+            keyPassword System.getenv("KEYPWD")
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
 }
